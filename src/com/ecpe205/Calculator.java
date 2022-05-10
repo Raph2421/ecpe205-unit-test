@@ -27,21 +27,20 @@ public class Calculator {
 
     //create a method that checks if a given string is a palindrome
     //use parameterizedTest - 5 values to test
+    public static boolean isPalindrome(String name) {
+        String originalString = name;
+        int i = 0, j = name.length() - 1;
+        while (i < j) {
+            if (name.charAt(i) != name.charAt(j)) return false;
+            i++;
+            j--;
+        }
+        return originalString.equalsIgnoreCase(name);
+    }
+
 
 
     //create a method that accepts an array of integer values, the method then sorts the value in ascending order
     //** you may choose whatever sort data structure (bubble sort, shell sort,...)
     //use parameterizedTest methodSource
-
-    void bubbleSort(int b[]) {
-        int n = b.length;
-        for (int i = 0; i < n - 1; i++)
-            for (int j = 0; j < n - i - 1; j++)
-                if (b[j] > b[j + 1]) {
-                    // swap arr[j+1] and arr[j]
-                    int temp = b[j];
-                    b[j] = b[j + 1];
-                    b[j + 1] = temp;
-                }
-    }
 }

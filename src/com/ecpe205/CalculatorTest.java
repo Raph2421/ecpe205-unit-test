@@ -82,12 +82,15 @@ class CalculatorTest {
     }
     //3. Test of Palindrome
 
+    @ParameterizedTest
+    @ValueSource(strings = {"partyboobytrap", "racecar", "eye", "john", "exe" })
+    void shouldKnowIfStringIsPalindrome(String n) { assertEquals(true, calc.isPalindrome(n));
+    }
+
+
 
     //4. Test of Sort
-    @ParameterizedTest
-    @MethodSource("AnsForBasePower")
-    void ShouldSort(int [ ] array) { assertEquals( calc.bubbleSort(array)
-    }
+
 
 
     static Stream<Arguments> sumInputValues () {
